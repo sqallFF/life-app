@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 7.2fr 1fr;
+  height: 100vh;
+  background-color: black
 }
 
 .App-logo {
@@ -35,4 +38,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Completion {
+  color: #00FF12;
+  opacity: .8;
+  transition: all .2s ease;
+}
+.Completion:hover {
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.Delete {
+  opacity: .8;
+  transition: all .2s ease;
+  color: rgb(214, 46, 46)
+}
+
+.Delete:hover {
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.Tomorrow {
+  opacity: .8;
+  color:#FFFF00;
+  transition: all .2s ease;
+}
+
+.Tomorrow:hover {
+  opacity: 1;
+  transition: all .2s ease;
 }
