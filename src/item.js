@@ -61,4 +61,4 @@ color: white;
   );
 };
 
-export { Item as default };
+export default Item;
