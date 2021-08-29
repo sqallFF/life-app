@@ -2,7 +2,14 @@
   display: grid;
   grid-template-rows: 1fr 7.2fr 1fr;
   height: 100vh;
-  background-color: black
+  background-color: black;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+}
+.items-container {
+  width: 100%;
 }
 
 .App-logo {

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 const MenuContainer = styled.div`
 display: flex;
+height: 10vh;
 justify-content: space-between;
 align-content: center;
 text-align: center;
@@ -13,7 +14,7 @@ background: linear-gradient(180deg, #000000 0%, #000061 54.69%);
 const MenuTex = styled.div`
 height: 70%;
 padding: 0px 45px;
-margin-top: .5em;
+margin-top: .55em;
 background-color: blue;
 display: flex;
 align-content: center;
