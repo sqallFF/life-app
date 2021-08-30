@@ -29,6 +29,7 @@ function ToDoApp() {
         <h2 style={{fontSize: "2rem", color: "yellow", marginBlockEnd: 0, marginInlineStart: 30}}>To Do Items</h2>
         <ToDoInput addItem={addItem} />
         <ItemList items={items} removeItem={removeItem} />
+        <span style={{color: 'white', fontWeight: "bolder"}}>{items.length}</span>
     </div>
   );
 }
