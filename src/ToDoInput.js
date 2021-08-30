@@ -5,10 +5,11 @@ import { motion } from 'framer-motion'
 import { Component } from 'react'
 
 const ToInput = styled.input`
-background: linear-gradient(180deg, #FFF 19.27%, #BB0000 100%);
-border: 2px solid red;
+background: linear-gradient(180deg, #FFF 19.27%, grey 200%);
+border: 2px solid grey;
 border-radius: 18px;
 padding: 10px 55px;
+color: black;
 `
 const InputForm = styled.form`
 padding: 0;
@@ -33,7 +34,7 @@ const AddItemForm = ({addItem}) => {
 return (
             <div style={{display: "flex", justifyContent:"center", alignItems:"center"}}>
                <InputForm onSubmit={handleSubmit}>
-               <ToInput key='editor1'type="text" placeholder="Add Something To Do" value={item} onChange={(e) => setItem(e.target.value)}/>
+               <ToInput key='editor1' type="text" placeholder="Add Something To Do" value={item} onChange={(e) => setItem(e.target.value)}/>
                <ToDoSubmit>Submit</ToDoSubmit>
                </InputForm> 
             </div>
