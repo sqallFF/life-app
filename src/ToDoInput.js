@@ -10,6 +10,10 @@ border: 2px solid grey;
 border-radius: 18px;
 padding: 10px 55px;
 color: black;
+
+&:focus{
+    outline: none;
+}
 `
 const InputForm = styled.form`
 padding: 0;

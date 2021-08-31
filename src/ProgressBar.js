@@ -9,7 +9,7 @@ const ProgressBar = ({count}) => {
     let containerStyles = {
       height: 20,
       width: width,
-      backgroundColor: "#e0e0de",
+      backgroundColor: "skyblue",
       borderRadius: 50,
       marginLeft: 100
     }
