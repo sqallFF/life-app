@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import TimeDate from './Time&Date'
+
 
 const MenuContainer = styled.div`
 display: flex;
@@ -49,7 +49,6 @@ function MenuText() {
            <MenuTex>
                <Text>Menu</Text>
             </MenuTex> 
-            <TimeDate/>
             <CityName>Colorado Springs, CO</CityName>
        </MenuContainer>
     )

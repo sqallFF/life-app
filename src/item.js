@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindowClose, faCheckCircle, faCaretSquareDown } from '@fortawesome/free-solid-svg-icons'
 
 
-const Item = ({ item, removeItem }) => {
+const Item = ({ item, removeItem, count, setCount }) => {
     const InfoSide = styled.p`
   width: 50%;
   text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.89);
@@ -51,7 +51,7 @@ color: white;
         <TodoListContent>
           <InfoSide>{item}</InfoSide>
           <ButtonSide>
-            <FontAwesomeIcon className="Completion" icon={faCheckCircle} />
+            <FontAwesomeIcon className="Completion" icon={faCheckCircle}  onClick={() =>{setCount(count + 1)}} />
             <FontAwesomeIcon className="Tomorrow"icon={faCaretSquareDown} />
             <FontAwesomeIcon className="Delete"icon={faWindowClose} onClick={() => removeItem(item)}/>
           </ButtonSide>

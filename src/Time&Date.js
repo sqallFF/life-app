@@ -26,9 +26,12 @@ class TimeDate extends React.Component {
     }
     render() {
       return (
-        <h3 style={{fontWeight: "bolder" ,color: "whitesmoke", textShadow: '8px 4px 4px rgba(0, 0, 0, 0.69)'}}>
-     {this.state.time}.
+          <div>
+              <h2 style={{color: "blue", margin: 0, padding: 0}}>Time</h2>
+        <h3 style={{fontWeight: "bolder" ,color: "Blue", textShadow: '8px 4px 4px rgba(0, 0, 0, 0.69)'}}>
+     {this.state.time}
         </h3>
+        </div>
       );
     }
   }

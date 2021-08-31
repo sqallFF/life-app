@@ -1,21 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
-const ProgressBar = (props) => {
-    const { bgcolor, completed } = props;
-  
-    const containerStyles = {
+const ProgressBar = ({count}) => {
+   const width = 300
+   const percent = count/5
+   const CompletionPercent = count *20
+  const progress = percent * width
+    let containerStyles = {
       height: 20,
-      width: '80%',
+      width: width,
       backgroundColor: "#e0e0de",
       borderRadius: 50,
       marginLeft: 100
     }
   
-    const fillerStyles = {
+    let fillerStyles = {
+        width: `${progress}px`,
       height: '100%',
-      width: `${completed}%`,
-      backgroundColor: bgcolor,
+      backgroundColor:  "rgb(62, 122, 235)",
       borderRadius: 'inherit',
       textAlign: 'right',
       transition: 'width 1s ease-in-out',
@@ -30,7 +32,7 @@ const ProgressBar = (props) => {
     return (
       <div style={containerStyles}>
         <div style={fillerStyles}>
-          <span style={labelStyles}>{`${completed}%`}</span>
+          <span style={labelStyles}>{CompletionPercent}%</span>
         </div>
       </div>
     );
