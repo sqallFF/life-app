@@ -28,7 +28,7 @@ function ToDoApp() {
 
   return (
     <div style={{zIndex: 3}}>
-        <h2 style={{fontSize: "2rem", color: "yellow", marginBlockEnd: 0, marginInlineStart: 30}}>To Do Items</h2>
+        <h2 style={{fontSize: "2rem", color: "yellow", marginBlockEnd: 0, marginInlineStart: 30, borderBottom: "2px solid yellow"}}>To Do Items</h2>
         <ToDoInput addItem={addItem} />
         <ItemList items={items} count={count} setCount={setCount} removeItem={removeItem} />
         <ProgressBar count={count}/>
