@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const BackgroundDIV = styled(motion.div)`
 height:74vh;
 width: 30vw;
-border-right: 4px solid blue;
+border-right: 1px solid blue;
 background: linear-gradient(268.5deg, #001792 1.11%, transparent 37.6%);
 
 `

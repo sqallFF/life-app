@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-rows: .9fr 6.3fr 2fr;
+  grid-template-rows: 1fr 9.6fr 2fr;
   height: 100vh;
   background-color: black;
   /* display: flex;

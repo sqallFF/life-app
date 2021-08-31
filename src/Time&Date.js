@@ -39,14 +39,18 @@ class TimeDate extends React.Component {
         justifyContent: "center"
       }
       const TimeDateContentWrapper = {
+        position: "absolute",
         clipPath: "polygon(0 0, 96% 0, 100% 15%, 100% 65%, 96% 79%, 96% 100%, 0 100%)", 
         background:"blue", 
-        width: "50%", 
-        height: "100%",
+        width: "45vw", 
+        height: "25%",
+        marginTop: "28.15rem",
+        zIndex: 4
+
       }
       const TimeTitle = styled.h2`
          color: #3FB7FF;
-        margin-left: 10;
+        margin-left: 10px;
         padding: 0;
         width: 100%;
         border-bottom-width: 2px;
@@ -58,7 +62,7 @@ class TimeDate extends React.Component {
       return (
         <div style={TimeDateContentWrapper}>
           <div style={TimeDateContentStyle}>
-              <TimeTitle>Time</TimeTitle>
+              <TimeTitle>Date & Time</TimeTitle>
         <h3 style={{fontWeight: "bolder" ,color: "#00FFFC", textShadow: '8px 4px 4px rgba(0, 0, 0, 0.69)', marginBlockStart:0,
       marginBlockEnd:0, marginLeft: 20}}>
      {this.state.time}
