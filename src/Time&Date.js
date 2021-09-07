@@ -44,7 +44,7 @@ class TimeDate extends React.Component {
         background:"blue", 
         width: "45vw", 
         height: "25%",
-        marginTop: "28.15rem",
+        marginTop: "30.825rem",
         zIndex: 4
 
       }

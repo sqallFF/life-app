@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const ProgressBar = ({count, items}) => {
-   const width = "17rem"
+   const width = 300
    const percent = count/5
    const CompletionPercent = count *20
   const progress = percent * width
@@ -15,7 +15,8 @@ const ProgressBar = ({count, items}) => {
       width: width,
       backgroundColor: "skyblue",
       borderRadius: 50,
-      margin: " 2% 35%",
+      margin: " 23% 11%",
+      position: "absolute",
     }
   
     let fillerStyles = {
@@ -24,7 +25,7 @@ const ProgressBar = ({count, items}) => {
       backgroundColor:  "rgb(62, 122, 235)",
       borderRadius: 'inherit',
       textAlign: 'right',
-      transition: 'width 1s ease-in-out',
+      transition: 'width 1s ease-i-out',
     }
     let nextFillerStyles = {
         width: `${ToDoListProgess}px`,

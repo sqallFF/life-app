@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindowClose, faCheckCircle, faCaretSquareDown } from '@fortawesome/free-solid-svg-icons'
+import { faWindowClose, faCheckCircle, faEdit } from '@fortawesome/free-solid-svg-icons'
+import { motion } from "framer-motion"
 
 
 const Item = ({ item, removeItem, count, setCount }) => {
@@ -19,11 +20,11 @@ width: 40%;
 text-shadow: 8px 4px 4px rgba(0, 0, 0, 0.89);
 color: white;
 `
-  const TodoListContentContainer = styled.div`
+  const TodoListContentContainer = styled(motion.div)`
   display:flex;
   justify-content: center;
   align-items: center;
-  z-index: 2
+  z-index: 2;
   `
   const TodoListContentWrapper =styled.div`
   display: flex;
@@ -45,14 +46,16 @@ color: white;
   width: 97%;
   height: 3.5em;
   `
+
+
   return (
-    <TodoListContentContainer>
+    <TodoListContentContainer >
           <TodoListContentWrapper>
         <TodoListContent>
           <InfoSide>{item}</InfoSide>
           <ButtonSide>
             <FontAwesomeIcon className="Completion" icon={faCheckCircle}  onClick={() =>{setCount(count + 1)}} />
-            <FontAwesomeIcon className="Tomorrow"icon={faCaretSquareDown} />
+            <FontAwesomeIcon className="Tomorrow"icon={faEdit} />
             <FontAwesomeIcon className="Delete"icon={faWindowClose} onClick={() => removeItem(item)}/>
           </ButtonSide>
           </TodoListContent>
