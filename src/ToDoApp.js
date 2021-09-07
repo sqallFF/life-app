@@ -32,20 +32,22 @@ function ToDoApp() {
   overflow-y: scroll;
   overflow-x: hidden;
 
-  &:-webkit-scrollbar {
+  &::-webkit-scrollbar {
   width: 20px;
 }
 
 
 /* Track */
-&:-webkit-scrollbar-track {
+&::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
 
 /* Handle */
-&:-webkit-scrollbar-thumb {
-  background: red;
+&::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+  box-shadow: inset 5px 0 20px blue;
 }
   `
   const ToDoTitle = styled.h2`

@@ -27,9 +27,10 @@ background:  linear-gradient(180deg, #000000 19.27%, grey 200%);
 clip-path: polygon(8% 0, 100% 0, 100% 81%, 93% 100%, 0 100%, 0 23%);
 width: 97%;
 height: 3.5em;
-${props => props.background && css`
-background: linear-gradient(180deg, #000000 19.27%, #BB0000 100%)
-` }
+
+&:hover {
+    background: #000
+}
 `
 
 const MenuListContentWrapper =styled.div`
@@ -40,17 +41,14 @@ const MenuListContentWrapper =styled.div`
    width: 30%;
   height: 4em;
   background-color:  grey;
-  ${props => props.background && css`
-background: #BB0000
-` }
   `
 function InitalMenu() {
     return (
         <>
         <AnimatePresence>
         <MenuContainer>
-            <MenuListContentWrapper background>
-            <MenuItems to='/toDo' background>To-Do List</MenuItems>
+            <MenuListContentWrapper>
+            <MenuItems to='/toDo'>To-Do List </MenuItems>
             </MenuListContentWrapper>
             <MenuListContentWrapper>
             <MenuItems>Google Fit</MenuItems>
