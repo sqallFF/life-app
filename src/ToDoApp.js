@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import ProgressBar from './ProgressBar';
 import styled from 'styled-components';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 function ToDoApp() {
   const [count, setCount] = useState(0);
   const [items, setItems] = useState([]);
@@ -27,7 +27,7 @@ function ToDoApp() {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
 
-  const ToDoContainer = styled.div`
+  const ToDoContainer = styled(motion.div)`
   z-index: 1;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -63,7 +63,7 @@ border-image:  linear-gradient(90deg,yellow 0%, rgba(0,0,0,0) 74%) 1 stretch;
 `
   return (
     <AnimatePresence>
-    <ToDoContainer>
+    <ToDoContainer initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}}>
         <ToDoTitle style={{ position: 'fixed',
           fontSize: "2rem",
            color: "yellow",
