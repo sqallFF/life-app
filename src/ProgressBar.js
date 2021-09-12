@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion';
 
 const ProgressBar = ({count, items}) => {
    const width = 300
@@ -43,16 +44,16 @@ const ProgressBar = ({count, items}) => {
   
     return (
     <>
-      { count <= 5 &&<div style={containerStyles}>
+      { count <= 5 &&<motion.div style={containerStyles}>
         <div style={fillerStyles}>
           <span style={labelStyles}>{CompletionPercent}%</span>
         </div>
-      </div>}
-      { count > 5 &&<div style={containerStyles}>
+      </motion.div>}
+      { count > 5 &&<motion.div style={containerStyles}>
         <div style={nextFillerStyles}>
           <span style={labelStyles}>{nextPercent*100}%</span>
         </div>
-      </div>}
+      </motion.div>}
       </>
     );
   };

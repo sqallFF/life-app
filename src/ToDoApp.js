@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import ProgressBar from './ProgressBar';
 import styled from 'styled-components';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 function ToDoApp() {
   const [count, setCount] = useState(0);
   const [items, setItems] = useState([]);
@@ -50,7 +50,7 @@ function ToDoApp() {
   box-shadow: inset 5px 0 20px blue;
 }
   `
-  const ToDoTitle = styled.h2`
+  const ToDoTitle = styled(motion.h2)`
   color: yellow;
  margin-left: 10px;
  padding: 0;
@@ -61,21 +61,38 @@ function ToDoApp() {
 border-style: solid;
 border-image:  linear-gradient(90deg,yellow 0%, rgba(0,0,0,0) 74%) 1 stretch;
 `
+const container = {
+  hidden: { 
+      opacity: 0
+},
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {duration: 1}
+  }
+};
+
+
   return (
-    <AnimatePresence>
-    <ToDoContainer initial={{opacity: 0}} animate={{opacity:1}} exit={{opacity:0}}>
-        <ToDoTitle style={{ position: 'fixed',
+    
+    <ToDoContainer initial="hidden" animate="show" exit="exit" variants={container}>
+        <ToDoTitle
+        style={{ position: 'fixed',
           fontSize: "2rem",
            color: "yellow",
             marginBlockEnd: 0, 
             marginInlineStart: 30,
              borderBottom: "2px solid yellow"
              }}>To Do Items</ToDoTitle>
-        <ProgressBar count={count} style={{position: 'fixed'}} items={items.length}/>
+        <ProgressBar  count={count} style={{position: 'fixed'}} items={items.length}/>
         <ToDoInput addItem={addItem}></ToDoInput>
-        <ItemList items={items} count={count} setCount={setCount} removeItem={removeItem} />
+        <ItemList  items={items} count={count} setCount={setCount} removeItem={removeItem} />
     </ToDoContainer>
-    </AnimatePresence>
   );
 }
 

@@ -29,15 +29,6 @@ margin: 0px 0px 0px 5px;
 clip-path: polygon(15% 0, 100% 0%, 84% 100%, 2% 100%);
 
 `
-
-const hoverParms = {
-    hoverParams: {
-    scale: 1.05,
-    background: "blue",
-    transition: {duration: 0.2}
-    }
-}
-
 const AddItemForm = ({addItem}) => {
     const [item, setItem] = useState('hello');
 
@@ -47,12 +38,12 @@ const AddItemForm = ({addItem}) => {
       setItem('');
     };
 return (
-            <div style={{display: "flex", justifyContent:"center", alignItems:"center", position:"absolute", marginLeft:100, marginTop: 120}}>
+            <motion.div style={{display: "flex", justifyContent:"center", alignItems:"center", position:"absolute", marginLeft:100, marginTop: 120}}>
                <InputForm onSubmit={handleSubmit}>
-               <ToInput key='editor1' type="text" placeholder="Add Something To Do" value={item} onChange={(e) => setItem(e.target.value)}/>
-               <ToDoSubmit whileHover="hoverParams" variants={hoverParms}>Submit</ToDoSubmit>
+               <ToInput type="text" placeholder="Add Something To Do" value={item} onChange={(e) => setItem(e.target.value)}/>
+               <ToDoSubmit>Submit</ToDoSubmit>
                </InputForm> 
-            </div>
+            </motion.div>
         )
     }
 export default AddItemForm 

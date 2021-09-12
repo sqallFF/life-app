@@ -2,10 +2,10 @@ import React from 'react'
 import styled, {css}from 'styled-components'
 import { AnimatePresence, motion } from 'framer-motion'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
-
+require('dotenv').config();
 const MenuContainer = styled(motion.div)`
 height: 80%;
-width: 100%;
+width: 95%;
 background: transparent;
 z-index: 10;
 display: flex;
@@ -63,28 +63,36 @@ const MenuListContentWrapper =styled(motion.div)`
 }
   `
     const container = {
-      hidden: { opacity: 0, },
+      hidden: { 
+          opacity: 0
+    },
       show: {
         opacity: 1,
         transition: {
-          staggerChildren: 0.1
+          staggerChildren: 0.2
+        }
+      },
+      exit: {
+        opacity: 0,
+        transition: {
+          duration: 1,
+          staggerChildren: 0.2
         }
       }
     };
 
     const listItem = {
         hidden: { opacity: 0, y:100 },
-        show: { opacity: 1, y: 0 }
+        show: { opacity: 1, y: 0 },
+        exit: {opacity: 0, y:-100}
       };
 function InitalMenu() {
     return (
-        <>
-        <AnimatePresence exitBeforeEnter>
-        <MenuContainer  initial="hidden"
+        <MenuContainer 
+        initial="hidden"
         animate="show"
-        exit="hidden"
-        variants={container}
-        transition={{ ease: "easeOut", duration: 1, staggerChildren: 0.5 }}>
+        exit="exit"
+        variants={container}>
             <MenuListContentWrapper whileHover={{x: 30}} variants={listItem}>
             <MenuItems to='/toDo'>To-Do List </MenuItems>
             </MenuListContentWrapper >
@@ -98,8 +106,6 @@ function InitalMenu() {
             <MenuItems>Review</MenuItems>
             </MenuListContentWrapper>
         </MenuContainer>
-        </AnimatePresence>
-        </>
     )
 }
 
